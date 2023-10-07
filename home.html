@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniDrip</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS for center alignment and hover effects -->
+    <style>
+        /* Center-align header text */
+        .center-text {
+            text-align: center;
+        }
+        /* Center-align product cards */
+        .product-card {
+            display: flex;
+            justify-content: center;
+        }
+        /* Add hover effect to links */
+        .nav-link:hover {
+            color: #ff6600; /* Change the color on hover (orange in this example) */
+        }
+        /* Add hover effect to product cards */
+        .product-card:hover {
+            transform: scale(1.05); /* Scale up the card on hover */
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/home.html">AniDrip</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/apparels.html">Apparels</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/accessories.html">Accessories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutus.html">About Us</a>
+                </li>
+                <!-- Add more categories here -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Homepage Content -->
+    <div class="container mt-4 center-text">
+        <h1>Welcome to Anime Merch Store</h1>
+        <p>Discover a wide range of anime merchandise and accessories.</p>
+        
+        <!-- Example Products -->
+        <div class="row">
+            <div class="col-lg-3 col-md-4 mb-4 product-card">
+                <div class="card">
+                    <img src="tshirt1.webp" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Robin T-Shirt</h5>
+                        <p class="card-text">$9.99</p>
+                        <button class="btn btn-primary" onclick="openOrderForm('Robin T-Shirt', 9.99)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 mb-4 product-card">
+                <div class="card">
+                    <img src="acc1.jpeg" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Zoro's Keychain</h5>
+                        <p class="card-text">$4.99</p>
+                        <button class="btn btn-primary" onclick="openOrderForm('Zoros Keychain', 4.99)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-lg-3 col-md-4 mb-4 product-card">
+                <div class="card">
+                    <img src="tshirt2.jpeg" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Komurasaki San</h5>
+                        <p class="card-text">$8.99</p>
+                        <button class="btn btn-primary" onclick="openOrderForm('Komurasaki San', 8.99)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-lg-3 col-md-4 mb-4 product-card">
+                <div class="card">
+                    <img src="acc2.jpeg" class="card-img-top" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Naruto HandGear</h5>
+                        <p class="card-text">$11.99</p>
+                        <button class="btn btn-primary" onclick="openOrderForm('Naruto HandGear', 11.99)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to open the order form in a new window
+        function openOrderForm(productName, price) {
+            const orderFormWindow = window.open("order_form.html", "_blank", "width=400,height=400");
+            
+            // Pass product details to the order form
+            orderFormWindow.onload = function () {
+                orderFormWindow.document.getElementById("productName").textContent = productName;
+                orderFormWindow.document.getElementById("productPrice").textContent = `$${price}`;
+            };
+        }
+    </script>
+    
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form - AniDrip</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS for styling the form -->
+    <style>
+        /* Add custom styles here */
+        .confirmation {
+            text-align: center;
+            background-color: #4CAF50; /* Green background color */
+            color: white; /* White text color */
+            padding: 10px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Order Form</h1>
+        <p>Please provide your information to confirm your order:</p>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea class="form-control" id="address" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="confirmation" id="confirmationMessage"></div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript to handle form submission
+        document.getElementById("orderForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            
+            // Get user input
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const address = document.getElementById("address").value;
+
+            // Display confirmation message
+            const confirmationMessage = `Thank you, ${name}! Your order has been confirmed. We will contact you at ${phone} for delivery to the following address: ${address}`;
+            document.getElementById("confirmationMessage").textContent = confirmationMessage;
+        });
+
+        // Function to open the order form in a new window
+        function openOrderForm(productName, price) {
+            const orderFormWindow = window.open("order_form.html", "Order Form", "width=400,height=400");
+            
+            // Pass product details to the order form
+            orderFormWindow.onload = function () {
+                orderFormWindow.document.getElementById("productName").textContent = productName;
+                orderFormWindow.document.getElementById("productPrice").textContent = `$${price}`;
+            };
+        }
+    </script>
+</body>
+</html>

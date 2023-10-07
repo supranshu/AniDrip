@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories - AniDrip</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS for center alignment and hover effects -->
+    <style>
+        /* Add custom styles here */
+        /* Center-align product cards */
+        .product-card {
+            display: flex;
+            justify-content: center;
+        }
+        /* Add hover effect to product cards */
+        .product-card:hover {
+            transform: scale(1.05); /* Scale up the card on hover */
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/home.html">AniDrip</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/apparels.html">Apparels</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/accessories.html">Accessories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutus.html">About Us</a>
+                </li>
+                <!-- Add more categories here -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Accessories Content -->
+    <div class="container mt-4" style="text-align: center;">
+        <h1>Accessories</h1>
+        <p>Discover our selection of anime-inspired accessories.</p>
+        
+        <!-- Example Accessories -->
+        <div class="row">
+            <div class="col-lg-6 col-md-6 mb-4 product-card">
+                <div class="card">
+                    <img src="acc2.jpeg" class="card-img-top" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Naruto HandGear</h5>
+                        <p class="card-text">$11.99</p>
+                        <button class="btn btn-primary" onclick="openOrderForm('Naruto HandGear', 11.99)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4 product-card">
+                <div class="card">
+                    <img src="acc1.jpeg" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Zoro's Keychain</h5>
+                        <p class="card-text">$4.99</p>
+                        <button class="btn btn-primary" onclick="openOrderForm('Zoros Keychain', 4.99)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 mb-4 product-card">
+                <div class="card">
+                    <img src="acc3.jpg" class="card-img-top" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title">ChainsawMan KeyChain</h5>
+                        <p class="card-text">$11.99</p>
+                        <button class="btn btn-primary" onclick="openOrderForm('Naruto HandGear', 11.99)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4 product-card">
+                <div class="card">
+                    <img src="acc4.jpg" class="card-img-top" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title">NoFace Woven KeyChain</h5>
+                        <p class="card-text">$11.99</p>
+                        <button class="btn btn-primary" onclick="openOrderForm('Naruto HandGear', 11.99)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 mb-4 product-card">
+                <div class="card">
+                    <img src="acc5.jpg" class="card-img-top" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title">JOJO Cap</h5>
+                        <p class="card-text">$11.99</p>
+                        <button class="btn btn-primary" onclick="openOrderForm('Naruto HandGear', 11.99)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4 product-card">
+                <div class="card">
+                    <img src="acc6.jpg" class="card-img-top" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Trafalgar-Law Cap</h5>
+                        <p class="card-text">$11.99</p>
+                        <button class="btn btn-primary" onclick="openOrderForm('Naruto HandGear', 11.99)">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to open the order form in a new window
+        function openOrderForm(productName, price) {
+            const orderFormWindow = window.open("order_form.html", "_blank", "width=400,height=400");
+            
+            // Pass product details to the order form
+            orderFormWindow.onload = function () {
+                orderFormWindow.document.getElementById("productName").textContent = productName;
+                orderFormWindow.document.getElementById("productPrice").textContent = `$${price}`;
+            };
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Include the same JavaScript libraries as in the homepage -->
+</body>
+</html>
